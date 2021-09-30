@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <title>Adventure Together - Xae</title>
+  </head>
+  <body>
+    <header>
+      <nav class="">
+        <div class="navigation">
+          <div class="header-logo">
+            <span class="logo">Xae</span>
+          </div>
+          <div class="nav-toggler">
+            <button class="btn btn-nav-toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                <g id="Layer_2" data-name="Layer 2">
+                  <g id="burger" data-name="Layer 1">
+                    <rect class="line line-1" width="32" height="4" />
+                    <rect class="line line-2" y="13" width="32" height="4" />
+                    <rect class="line line-3" y="26" width="32" height="4" />
+                  </g>
+                </g>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="nav-menu">
+          <ul class="menu-links">
+            <li><a class="link active" href="">home</a></li>
+            <li><a class="link" href="">about</a></li>
+            <li><a class="link" href="">gallery</a></li>
+            <li><a class="link" href="">contact</a></li>
+            <li class="prefers-color-scheme">
+              <button class="btn">
+                <span class="light">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    aria-hidden="true"
+                    role="img"
+                    class="iconify iconify--ion"
+                    width="32"
+                    height="32"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 512 512"
+                  >
+                    <path
+                      d="M256 160c25.499 0 49.567 10.025 67.771 28.229S352 230.501 352 256s-10.025 49.567-28.229 67.771S281.499 352 256 352s-49.567-10.025-67.771-28.229S160 281.499 160 256s10.025-49.567 28.229-67.771S230.501 160 256 160m21.333-128h-42.666v64h42.666V32zm129.063 43.729L368 114.135 397.864 144l38.406-38.396-29.874-29.875zm-300.792 0l-29.875 29.875L114.136 144 144 114.135l-38.396-38.406zM256 128c-70.396 0-128 57.604-128 128s57.604 128 128 128 128-57.604 128-128-57.604-128-128-128zm224 106.666h-64v42.668h64v-42.668zm-384 0H32v42.668h64v-42.668zM397.864 368L368 397.865l38.396 38.406 29.875-29.875L397.864 368zm-283.728 0L75.73 406.396l29.875 29.875L144 397.865 114.136 368zm163.197 48h-42.666v64h42.666v-64z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </li>
+            <li class="social-media-links">
+              <ul class="link-icons">
+                <li>
+                  <a href="" class="btn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      aria-hidden="true"
+                      role="img"
+                      class="iconify iconify--mdi"
+                      width="32"
+                      height="32"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="btn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      aria-hidden="true"
+                      role="img"
+                      class="iconify iconify--mdi"
+                      width="32"
+                      height="32"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="btn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      aria-hidden="true"
+                      role="img"
+                      class="iconify iconify--mdi"
+                      width="32"
+                      height="32"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <section class="banner banner-main">
+        <div class="banner-content">
+          <div class="content">
+            <h1 class="t-1 bold mb-2">
+              Adventure
+              <span class="block">Together</span>
+            </h1>
+            <p class="medium">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error at
+              excepturi quidem! Doloremque illo, illum vero molestias eaque, id
+              quo, odio tempora animi sequi quia similique
+            </p>
+          </div>
+        </div>
+        <div class="banner-background">
+          <img
+            src="asssets/Group 10.png"
+            alt="Xae's Adventure"
+            class="img terrain"
+          />
+        </div>
+        <div class="banner-carousel">
+          <div class="carousel">
+            <div class="item">
+              <div class="card">
+                <div class="card-background">
+                  <img src="asssets/space.png" alt="" class="img" />
+                </div>
+                <div class="card-body">
+                  <h2 class="t-2 bold mb-1">Exploration</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Aliquid, similique? Adipisci dolores sit quidem pariatur.
+                  </p>
+                  <a href="" class="btn visit">
+                    <span class="icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="56.303"
+                        height="11.698"
+                        viewBox="0 0 56.303 11.698"
+                      >
+                        <path
+                          id="Path_2"
+                          data-name="Path 2"
+                          d="M6023.877,838.072l9.991,9.991H5979.98"
+                          transform="translate(-5979.98 -837.365)"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="card">
+                <!-- <div class="card-background">
+                  <img src="asssets/space.png" alt="" class="img" />
+                </div> -->
+                <div class="card-body">
+                  <h2 class="t-2 bold mb-1">Exploration</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Aliquid, similique? Adipisci dolores sit quidem pariatur.
+                  </p>
+                  <a href="" class="btn visit">
+                    <span class="icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="56.303"
+                        height="11.698"
+                        viewBox="0 0 56.303 11.698"
+                      >
+                        <path
+                          id="Path_2"
+                          data-name="Path 2"
+                          d="M6023.877,838.072l9.991,9.991H5979.98"
+                          transform="translate(-5979.98 -837.365)"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="card">
+                <div class="card-background">
+                  <img src="asssets/space.png" alt="" class="img" />
+                </div>
+                <div class="card-body">
+                  <h2 class="t-2 bold mb-1">Footprint</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                    perferendis iste rerum.
+                  </p>
+                  <a href="" class="btn visit">
+                    <span class="icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="56.303"
+                        height="11.698"
+                        viewBox="0 0 56.303 11.698"
+                      >
+                        <path
+                          id="Path_2"
+                          data-name="Path 2"
+                          d="M6023.877,838.072l9.991,9.991H5979.98"
+                          transform="translate(-5979.98 -837.365)"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="buttons carousel-control">
+              <button class="btn carousel-button prev"><</button>
+              <span class="carousel-indicator">
+                <span class="index">1</span>
+                /
+                <span class="length">2</span>
+              </span>
+              <button class="btn carousel-button next">></button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <script src="script/behavior.js"></script>
+  </body>
+</html>

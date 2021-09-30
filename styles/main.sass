@@ -1,0 +1,526 @@
+*:root
+    --clr-default: #0C0C0C
+    --clr-mid: #476572
+    --clr-main: #2C4550
+    --clr-text-default: #ffffff
+    --fltr: blur(15px) brightness(10%)
+    --fltr-b: blur(15px) brightness(40%)
+
+.light-mode
+    --clr-default: #899190
+    --clr-main: #f2f7f8
+    --clr-text-default: #000
+    --fltr: blur(15px) brightness(110%)
+    --fltr-b: blur(15px) brightness(100%)
+
+// .dark-mode
+//     --clr-default: #0C0C0C
+//     --clr-main: #2C4550
+//     --clr-text-default: #ffffff
+//     --fltr: blur(15px) brightness(10%)
+//     --fltr-b: blur(15px) brightness(40%)
+    
+
+$clr-default: var(--clr-default)
+$clr-mid: var(--clr-mid)
+$clr-main: var(--clr-main)
+$clr-text-default: var(--clr-text-default)
+$fltr: var(--fltr)
+$fltr2: var(--fltr-b)
+
+*, *::before, *::after
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+    clear: both
+
+body
+    font-family: 'Poppins'
+    font-size: 95%
+    color: $clr-text-default
+
+p, a, h1, h2, h3
+    font-size: .8rem
+    text-decoration: none
+    color: inherit
+    font-weight: normal
+    line-height: 1
+
+p
+    line-height: 22px
+
+span
+    font-size: inherit
+    font-weight: inherit
+
+@mixin gaps($fixed: false, $num: 16)
+    $type: ("m": "margin", "p": "padding")
+    $dirs: ("l": "left", "r": "right", "t": "top", "b": "bottom")
+    @each $tkey, $tval in $type
+        @for $i from 0 through 6
+            @each $dkey, $dval in $dirs
+                .#{$tkey}#{$dkey}-#{$i}
+                    @if $fixed
+                        #{$tval}-#{$dval}: #{$i * $num}px
+                    @else
+                        #{$tval}-#{$dval}: #{$i}em
+        
+
+@include gaps(true, 14)
+
+.t-1
+    font-size: 3rem
+    line-height: 1.2
+
+.t-2
+    font-size: 1.15rem
+    line-height: 1.2
+
+.medium
+    font-weight: 500
+     
+.bold
+    font-weight: 600
+
+.block
+    display: block
+
+.btn
+    border: none
+    outline: none
+    background: none
+    font-family: inherit
+    font-size: inherit
+    font-color: inherit
+    color: inherit
+    display: block
+    cursor: pointer
+    line-height: 0
+
+.container
+    width: 100%
+    padding: 0 1.5em
+    max-width: 1026px
+    margin: auto
+
+
+.card
+    position: relative
+    max-width: 400px
+    min-width: 180px
+    width: 100%
+    height: 100%
+    display: flex
+
+    .card-background
+        flex: 1
+        height: 100%
+        .img
+            height: inherit
+
+    .card-body
+        position: relative
+        height: 100%
+        flex: 1
+        padding: 5% 0% 5% 5%
+        // padding: 1.5em 0 2.5em 1.5em
+        p
+            height: 8ch
+            overflow: hidden
+            text-overflow: ellipsis
+        .visit
+            position: absolute
+            right: 0
+            bottom: 10%
+            svg
+                display: block
+                line-height: 0
+
+.carousel
+    position: relative
+    height: 100%
+    width: 100%
+    overflow: hidden
+        
+    .item
+        position: absolute
+        top: 0
+        height: inherit
+        padding: 0 1.5em
+        width: 100%
+        transition: transform 1s ease
+    
+    .buttons
+        position: absolute
+        display: none
+        width: max-content
+        gap: 1em
+        z-index: 1
+        left: 38.24%
+        bottom: 1em
+        align-items: center
+        .carousel-indicator
+            text-align: center
+            font-size: .8rem
+        .btn
+            padding: .5em
+            width: 32px
+            height: 32px
+            line-height: 0
+            border-radius: 50%
+            transition: background .3s ease
+            &:hover
+                transition: unset
+                background: #ffffff5d
+                
+            &.disabled
+                transition: opacity .3s ease
+                opacity: .5
+                &:hover
+                    background: unset
+
+@media screen and ( min-width: 600px )
+    .card
+        max-width: 600px
+
+    .banner
+        .banner-content
+            .content
+                position: absolute
+                width: 80%
+
+        .banner-background
+            .img
+                position: absolute
+                &.terrain
+                    display: block
+                    width: auto
+                    height: 100%
+                    left: -10%
+                    top: 30%
+                    right: 0
+                    bottom: 0
+
+    
+        
+@media screen and ( min-width: 1026px )
+    .card
+        max-width: 800px
+        min-width: 800px
+        .card-body
+            height: 100%
+            padding: 7% 7% 7%
+            .visit
+                bottom: 15%
+
+    .carousel
+        .item
+            width: auto
+            padding: 0 7.25%
+        .buttons
+            display: flex
+
+nav
+    position: absolute
+    width: 100%
+    z-index: 2
+
+    .logo
+        font-weight: 700
+        font-size: 2.5em
+        line-height: 0
+        display: block
+    
+    .nav-toggler
+        .btn-nav-toggle
+            width: 32px
+            height: 32px
+            padding: .25rem
+            transition: transform .3s ease
+            svg #burger
+                display: block
+                .line
+                    fill: currentColor
+                    transition: transform .3s ease
+                .line-2
+                    transform-origin: left
+                    transform: translateX(30%)
+            &.toggled
+                transform: rotateZ(180deg)
+                svg #burger
+                    .line-1
+                        transform: translate(20%, 15%) rotateZ(45deg) scaleX(90%)
+                    .line-3
+                        transform: translate(-45%, 20%) rotateZ(-45deg) scaleX(90%)
+                    .line-2
+                        transform-origin: right
+                        transform: translateX(100%)
+
+
+
+
+    .navigation
+        padding: 0 1.5em
+        height: 80px
+        display: flex
+        flex-flow: row nowrap
+        justify-content: space-between
+        align-items: center
+        position: relative
+
+    .nav-menu
+        position: relative
+        backdrop-filter: $fltr
+        overflow: hidden
+        height: 0
+        opacity: 0
+        display: flex
+        justify-content: center
+        align-items: center
+        text-align: center
+        transition: height .3s ease, opacity .2s ease
+        .menu-links
+            list-style: none
+            .link
+                font-size: 1.5rem
+                text-transform: capitalize
+                display: inline-block
+                padding: 1em 1.5em
+                &::after
+                    content: ''
+                    position: relative
+                    width: 100%
+                    height: 3px
+                    display: block
+                    bottom: -.5em
+                    background: $clr-text-default
+                    transform: scaleX(0)
+                    transform-origin: center
+                    transition: transform .3s ease
+                &:hover, &.active
+                    &::after
+                        transform: scaleX(1)
+            .prefers-color-scheme 
+                position: relative
+                .btn
+                    line-height: 0
+                    display: unset
+                    margin-top: 1em
+                    // transform-origin: center
+                    transition: transform .3s ease
+                    &.light-mode
+                        transform: rotateZ(180deg)
+
+        .social-media-links
+            padding: 2em 0
+            margin-top: 2em
+            position: relative
+            &::before
+                position: absolute
+                top: 0
+                content: ''
+                background: $clr-text-default
+                width: 100%
+                height: 1px
+                display: block
+            .link-icons
+                list-style: none
+                justify-content: center
+                align-items: center
+                gap: 1em
+                display: flex
+                .btn svg path
+                    transition: fill .3s ease
+                .btn:hover
+                    svg path
+                        transition: unset
+                        fill: $clr-mid
+                        
+
+        &.toggled
+            height: calc(100vh - 80px)
+            opacity: 1
+
+.banner
+    position: relative
+    overflow: hidden
+    width: 100%
+    height: 100vh
+    min-height: 300px
+    // max-height: 1080px
+    background: linear-gradient(-289.6deg, $clr-main 0, $clr-default 98.22%)
+
+    .banner-content
+        position: relative
+        z-index: 1
+        height: calc(100% - (20% + 4em))
+        width: 100%
+
+        .content
+            position: absolute
+            left: 0
+            bottom: 3em
+            padding: 0 5em 0 1.5em
+
+    .banner-background
+        position: absolute
+        z-index: 0
+        height: calc(100% - (20% + 4em))
+        width: 100%
+        top: 0
+        left: 0
+        .img
+            top: 50%
+            transform: translateY(calc(-50% + 2em))
+            position: absolute
+            &.terrain
+                display: block
+                height: 105%
+                right: -111%
+                
+    .banner-carousel
+        position: relative
+        height: 20%
+        width: 100%
+        backdrop-filter: $fltr2
+
+// @media screen and ( min-width: 800px )
+//     .banner
+//         .banner-content
+//             height: calc(100% - (27%))
+//             .content
+//                 width: 60%
+
+//         .banner-background
+//             height: calc(100% - (27%))
+//             width: 100%
+//             // left: 50%
+//             // transform: translateX(-50%)
+//             .img
+//                 &.terrain
+//                     // height: 155%
+//                     left: unset
+//                     // right: -10%
+//         .banner-carousel
+//             // width: calc(100% - 8.43%)
+//             // height: 27%
+//             // bottom: 0
+//             // left: 8.43%
+
+@media screen and ( min-width: 1026px )
+    p, a, h1, h2, h3
+        font-size: 1rem
+    p
+        line-height: 28px
+
+    .t-1
+        font-size: 5em
+        line-height: 1.1
+
+    .t-2
+        font-size: 1.75em
+        line-height: 1.1
+
+    .container
+        padding: 0 2em
+
+    nav
+        .logo
+            font-weight: 700
+            font-size: 3em
+            display: block
+
+        .navigation
+            position: fixed
+            height: 100%
+            width: 8.43%
+            padding: 3em 0
+            // max-width: 162px
+            left: 0
+            border-right: 1px solid $clr-text-default
+
+            .header-logo
+                position: relative
+                height: 100%
+                left: 50%
+                transform: translateX(-50%)
+
+            .nav-toggler
+                display: none
+
+        .nav-menu
+            position: absolute
+            overflow: unset
+            backdrop-filter: unset
+            right: 0
+            height: unset
+            padding: 1.5em
+            width: calc(100% - 8.43%)
+            justify-content: right
+            opacity: 1
+            .menu-links
+                display: flex
+                flex-flow: row nowrap
+                align-items: center
+                gap: 2em
+                .prefers-color-scheme
+                    .btn
+                        margin-top: 0
+                        margin-left: 2.5em
+                .link
+                    font-size: 1rem
+                    padding: .5em
+
+            .social-media-links
+                position: fixed
+                width: 8.43%
+                height: 27%
+                left: 0
+                bottom: 0
+                margin: 0
+                .link-icons
+                    height: 100%
+                    gap: 1.75em
+                    padding: 0
+                    flex-flow: column
+                &::before
+                    content: unset
+                    background: unset
+                    
+                    
+
+            &.toggled
+                backdrop-filter: unset
+                height: unset
+
+
+
+    .banner
+        .banner-content
+            height: calc(100% - (27%))
+            .content
+                width: 30%
+                left: 15%
+                padding: unset
+                bottom: unset
+                top: 50%
+                transform: translateY(-50%)
+
+        .banner-background
+            height: calc(100% - (27%))
+            width: 100%
+            left: 50%
+            transform: translateX(-50%)
+
+            .img
+                &.terrain
+                    height: 155%
+                    left: unset
+                    right: -10%
+
+        .banner-carousel
+            width: calc(100% - 8.43%)
+            height: 27%
+            bottom: 0
+            left: 8.43%
+            // padding-left: 6.61%
