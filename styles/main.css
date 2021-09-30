@@ -425,28 +425,6 @@ span {
   background: unset;
 }
 
-@media screen and (min-width: 600px) {
-  .card {
-    max-width: 600px;
-  }
-  .banner .banner-content .content {
-    position: absolute;
-    width: 80%;
-  }
-  .banner .banner-background .img {
-    position: absolute;
-  }
-  .banner .banner-background .img.terrain {
-    display: block;
-    width: auto;
-    height: 100%;
-    left: -10%;
-    top: 30%;
-    right: 0;
-    bottom: 0;
-  }
-}
-
 @media screen and (min-width: 1026px) {
   .card {
     max-width: 800px;
